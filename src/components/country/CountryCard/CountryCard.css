@@ -1,0 +1,28 @@
+.card-flag {
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.card-flag > img {
+    height: 100%;
+    width: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-15%);
+}
+.card-title {
+    margin-bottom: 0 !important;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.card-title:hover {
+    text-decoration: none;
+    color: #333333;
+}

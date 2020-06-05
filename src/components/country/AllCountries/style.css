@@ -1,0 +1,28 @@
+.country-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.head-line {
+    margin: 15px 0;
+}
+
+/* .bg-primary,
+.bg-success,
+.bg-secondary,
+.bg-info,
+.bg-danger,
+.bg-dark {
+    color: #ffffff;
+} */
+@media (max-width: 990px) and (min-width: 501px) {
+    .country-list  {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .country-list  {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
