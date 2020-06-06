@@ -16,7 +16,15 @@
 .bg-warning {
     color: #ffffff;
 }
-
+span.badge-update {
+    font-size: 9px;
+    background: #888;
+    padding: 3px 5px;
+    border-radius: 10px;
+    color: #fff;
+    /* float: right; */
+    margin-left: 12px;
+}
 @media (max-width: 990px) and (min-width: 501px) {
     .world-block {
         grid-template-columns: repeat(2, 1fr);

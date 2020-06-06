@@ -94,6 +94,8 @@ const HomePage = () => {
                         <p className="lead">Today Recovered</p>
                     </div>
                 </div>
+                <hr/>
+                
             </div>
         )
     }

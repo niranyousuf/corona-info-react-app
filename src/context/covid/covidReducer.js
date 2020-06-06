@@ -4,6 +4,7 @@ import {
     SEARCH_COUNTRY,
     SPECIFIC_COUNTRY,
     ALL_COUNTRIES,
+    LATEST_UPDATE,
     COUNTRY_DETAILS,
     ALL_CONTINENTS,
     CONTINENT_DETAILS
@@ -27,6 +28,12 @@ export default (state, action) => {
             return {
                 ...state,
                 countries: action.payload,
+                loading: false
+            };
+        case LATEST_UPDATE:
+            return {
+                ...state,
+                updates: action.payload,
                 loading: false
             };
         case COUNTRY_DETAILS:

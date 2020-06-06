@@ -3,6 +3,7 @@ import HomePage from './HomePage/HomePage';
 import SearchCountry from '../country/SearchCountry/SearchCountry';
 import Search from '../layout/Search';
 import CovidContext from '../../context/covid/covidContext';
+import LatestUpdate from './HomePage/LatestUpdate';
 
 const Landing = () => {
 
@@ -21,6 +22,7 @@ const Landing = () => {
             <Fragment>
                 <Search />
                 <HomePage />
+                <LatestUpdate />
             </Fragment>
         )
     }

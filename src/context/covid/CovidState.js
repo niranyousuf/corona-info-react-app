@@ -10,6 +10,7 @@ import {
     SPECIFIC_COUNTRY,
     COUNTRY_DETAILS,
     ALL_COUNTRIES,
+    LATEST_UPDATE,
     ALL_CONTINENTS,
     CONTINENT_DETAILS
 } from '../types'
@@ -25,6 +26,7 @@ const CovidProvider = ({ children }) => {
 
         countries: [],
         country: {},
+        updates: [],
 
         continents: [],
         continent: {},
@@ -62,11 +64,23 @@ const CovidProvider = ({ children }) => {
         // console.log(res.data)
 
     }
+    // All countries Latest corona update
+    const latestUpdate = async () => {
+        setLoading();
+        const res = await axios
+            .get('https://corona.lmao.ninja/v2/countries?yesterday=false&sort=deaths');
+        dispatch({
+            type: LATEST_UPDATE,
+            payload: res.data
+        });
+        // console.log(res.data)
+
+    }
     // All continents corona update
     const allContinents = async () => {
         setLoading();
         const res = await axios
-            .get('https://corona.lmao.ninja/v2/continents?yesterday=true&sort');
+            .get('https://corona.lmao.ninja/v2/continents?yesterday=false&sort');
         dispatch({
             type: ALL_CONTINENTS,
             payload: res.data
@@ -78,7 +92,7 @@ const CovidProvider = ({ children }) => {
     const continentDetails = async (name) => {
         setLoading();
         const res = await axios
-            .get(`https://corona.lmao.ninja/v2/continents/${name}?yesterday&strict`);
+            .get(`https://corona.lmao.ninja/v2/continents/${name}?yesterday=false&strict`);
         dispatch({
             type: CONTINENT_DETAILS,
             payload: res.data
@@ -102,7 +116,7 @@ const CovidProvider = ({ children }) => {
     // indivisual cuntry list
     const specificContry = async (name) => {
         setLoading();
-        const res = await axios.get(`https://corona.lmao.ninja/v2/countries/${name}?yesterday=true&strict=true&query`);
+        const res = await axios.get(`https://corona.lmao.ninja/v2/countries/${name}?yesterday=false&strict=true&query`);
         dispatch({
             type: SPECIFIC_COUNTRY,
             payload: res.data
@@ -131,6 +145,7 @@ const CovidProvider = ({ children }) => {
             value={{
                 caseInfo: state.caseInfo,
                 countries: state.countries,
+                updates: state.updates,
                 continents: state.continents,
                 continent: state.continent,
                 country: state.country,
@@ -145,7 +160,8 @@ const CovidProvider = ({ children }) => {
                 countryDetails,
                 allCountries,
                 allContinents,
-                continentDetails
+                continentDetails,
+                latestUpdate
             }}
         >
             {children}
