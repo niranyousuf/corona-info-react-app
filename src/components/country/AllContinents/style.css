@@ -6,7 +6,9 @@
 .head-line {
     margin: 15px 0;
 }
-
+li>strong {
+    float: right;
+}
 /* .bg-primary,
 .bg-success,
 .bg-secondary,

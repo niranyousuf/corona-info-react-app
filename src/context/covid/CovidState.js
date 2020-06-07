@@ -68,7 +68,7 @@ const CovidProvider = ({ children }) => {
     const latestUpdate = async () => {
         setLoading();
         const res = await axios
-            .get('https://corona.lmao.ninja/v2/countries?yesterday=false&sort=deaths');
+            .get('https://corona.lmao.ninja/v2/countries?yesterday=false&sort=cases');
         dispatch({
             type: LATEST_UPDATE,
             payload: res.data
